@@ -3,7 +3,7 @@ const fs = require("fs");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-export const bot = async () => {
+const bot = async () => {
   const browser = await puppeteer.launch({
     headless: true,
     args: ["--no-sandbox"],
@@ -57,3 +57,5 @@ export const bot = async () => {
 
   await browser.close();
 };
+
+module.exports = bot;
