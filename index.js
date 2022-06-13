@@ -4,7 +4,7 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({headless: true, args:["--no-sandbox"]});
   const page = await browser.newPage();
   await page.goto(
     "https://www.xbox.com/en-US/games/store/hitman-3---standard-edition/9PF0R4MP0MW7"
